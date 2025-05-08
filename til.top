@@ -1,0 +1,14 @@
+; Created by Sobtop (http://sobereva.com/soft/sobtop) Version 1.0(dev3.2) on 2024-12-28
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ    fudgeQQ
+     1              2              yes            0.5       0.8333
+
+#include "C:\Users\86270\Desktop\¿ÆÑÐÈí¼þ\sobtop_1.0(dev3.2)\sobtop_1.0(dev3.2)\examples\tmkx_docking\tmkx.itp"
+
+[ system ]
+tmkx
+
+[ molecules ]
+; Molecule      nmols
+tmkx     1
