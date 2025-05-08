@@ -1,0 +1,40 @@
+; Ions simulation options
+integrator               = steep     ; Algorithm (steep = steepest descent minimization)
+emtol                    = 1000.0    ; Stop minimization when the maximum force < 1000.0 kJ/mol/nm
+emstep                   = 0.01      ; Energy step size
+nsteps                   = 50000     ; Maximum number of (minimization) steps to perform
+
+; Parameters describing what to do, when to stop and what to save
+nstlist                  = 1         ; Frequency to update the neighbor list and long-range forces
+cutoff-scheme            = Verlet    ; Pairlist cutoff scheme ('Verlet' or 'group')
+ns_type                  = grid      ; Method to determine neighbor list ('grid' or 'simple')
+rlist                    = 1.0       ; Cut-off for making neighbor list (short range forces)
+coulombtype              = PME       ; Treatment of long-range electrostatic interactions (PME or cutoff)
+rcoulomb                 = 1.0       ; Cut-off for Coulomb interactions
+vdw-type                 = cutoff    ; Treatment of van der Waals interactions (cut-off)
+rvdw                     = 1.0       ; Cut-off for van der Waals interactions
+
+; Temperature and Pressure coupling
+tcoupl                   = V-rescale ; Temperature coupling (V-rescale or Berendsen)
+tc-grps                  = System    ; Groups to couple separately to temperature bath
+tau-t                    = 0.1       ; Time constant(s) for temperature coupling
+ref-t                    = 300       ; Reference temperature (K)
+Pcoupl                   = no        ; Pressure coupling on (yes/no)
+tau-p                    = 1.0       ; Time constant for pressure coupling
+compressibility          = 4.5e-5    ; Isothermal compressibility of water (bar^-1)
+
+; Generate velocities
+gen-vel                  = yes       ; Generate velocities according to Maxwell distribution
+gen-temp                 = 300       ; Temperature for Maxwell distribution
+gen-seed                 = -1        ; Seed for random generator
+
+; Options for long-range electrostatics
+pme-order                = 4         ; Order of PME (only for PME)
+fourierspacing           = 0.16      ; Grid spacing for FFT grid (nm)
+
+; Output control
+nstenergy                = 100       ; Frequency to write energies to energy file
+nstlog                   = 100       ; Frequency to write energies to log file
+nstxout                  = 1000      ; Frequency to write coordinates to output trajectory file
+nstvout                  = 1000      ; Frequency to write velocities to output trajectory file
+nstfout                  = 1000      ; Frequency to write forces to output trajectory file

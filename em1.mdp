@@ -1,0 +1,32 @@
+; Parameters describing what to do, when to stop and what to save
+integrator     = steep      ; Algorithm (steep descent minimization)
+emtol          = 10000.0     ; Stop minimization when the maximum force < 1000.0 kJ/mol/nm
+emstep         = 0.01       ; Energy step size
+nsteps         = 10000       ; Maximum number of (minimization) steps to perform
+
+; Parameters describing how to find the neighbors of each atom and how to calculate the interactions
+nstlist        = 1          ; Frequency to update the neighbor list and long range forces
+cutoff-scheme  = Verlet     ; Cutoff scheme for non-bonded interactions
+ns_type        = grid       ; Method to determine neighbor list (simple, grid)
+coulombtype    = PME        ; Treatment of long range electrostatic interactions
+rcoulomb       = 1.0        ; Long range electrostatic cut-off
+rvdw           = 1.0        ; Long range Van der Waals cut-off
+
+; Parameters describing how to treat long range interactions
+pbc            = xyz        ; Periodic Boundary Conditions (assuming cubic box)
+DispCorr       = EnerPres   ; Apply long range dispersion corrections for energy and pressure
+
+; Temperature coupling
+tcoupl         = no         ; No temperature coupling in energy minimization
+
+; Pressure coupling
+pcoupl         = no         ; No pressure coupling in energy minimization
+
+; Output control
+nstxout        = 0          ; No X-coordinate output trajectory
+nstvout        = 0          ; No velocity output trajectory
+nstfout        = 0          ; No forces output trajectory
+nstlog         = 50         ; Output log file every 50 steps
+
+; Bonds constraints
+constraints    = none       ; No constraints needed for minimization
